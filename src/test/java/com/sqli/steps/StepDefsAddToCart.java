@@ -1,5 +1,7 @@
 package com.sqli.steps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,12 +22,15 @@ public class StepDefsAddToCart {
     String machineName;
     String capsuleName;
 
-    @Given("The User is on the nespresso homePage site")
-    public void the_user_is_on_the_nespresso_home_page_site() {
+    @Before
+    public void setUp(){
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.nespresso.com/fr/fr");
+    }
+    @Given("The User is on the nespresso homePage site")
+    public void the_user_is_on_the_nespresso_home_page_site() {
         homePage = new HomePage(driver);
         vertuoMachinesListingPage = new VertuoMachinesListingPage(driver);
         originalCapsulesListingPage = new OriginalCapsulesListingPage(driver);
@@ -82,7 +87,10 @@ public class StepDefsAddToCart {
         String quantityVenezia = String.valueOf(quantity2);
         Assert.assertTrue(cart.getVeneziaQuantity().contains(quantityVenezia));
         Assert.assertTrue(cart.getProductQuantity().contains(quantityVertuo));
-        driver.quit(); // Put it in an after Hook
+    }
+    @After
+    public void tearDown(){
+        driver.quit();
     }
 }
 
