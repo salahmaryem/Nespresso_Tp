@@ -28,8 +28,5 @@ public class BasePage {
         WebDriverWait wait = new WebDriverWait(driver,time);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-    public void scrollDown(WebDriver driver) {
-        JavascriptExecutor java =(JavascriptExecutor) driver;
-        java.executeScript("scroll(0,250)");
-    }
+
 }
