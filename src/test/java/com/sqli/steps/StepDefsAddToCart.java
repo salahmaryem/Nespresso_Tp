@@ -79,8 +79,8 @@ public class StepDefsAddToCart {
     public void theUserOpensTheCart() {
         cart.openAndCheckCart();
     }
-    @Then("^The User should see the machine and capsules in the cart and verify their quantities (.+) (.+)$")
-    public void theUserShouldSeeTheMachineAndCapsulesInTheCartAndVerifyTheirQuantitiesQuantityQuantity(Integer quantity1, Integer quantity2) {
+    @Then("The the cart should display the machine and capsules and verify their quantities (.+) (.+)$")
+    public void theTheCartShouldDisplayTheMachineAndCapsulesAndVerifyTheirQuantitiesQuantityQuantity(Integer quantity1, Integer quantity2) {
         Assert.assertTrue(cart.getProductNameFromCart().contains(machineName));
         Assert.assertTrue(cart.getCapsuleNameFromCart().contains(capsuleName));
         String quantityVertuo = String.valueOf(quantity1);

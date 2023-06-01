@@ -11,7 +11,7 @@ Feature: The user adds products to the basket
     And The User clicks on a capsule named <productName2>
     And The User adds the capsule to the cart with <quantity2>
     When The user opens the cart
-    Then The User should see the machine and capsules in the cart and verify their quantities <quantity1> <quantity2>
+    Then The the cart should display the machine and capsules and verify their quantities <quantity1> <quantity2>
 
 
     Examples:

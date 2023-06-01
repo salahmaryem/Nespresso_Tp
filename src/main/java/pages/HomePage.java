@@ -35,5 +35,5 @@ public class HomePage extends BasePage{
         subMenuMachineVertuo.click();
         handleCookiePopup();
     }
-
+ // Scroll down code
 }
