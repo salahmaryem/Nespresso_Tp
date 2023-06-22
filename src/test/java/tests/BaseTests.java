@@ -20,7 +20,7 @@ public class BaseTests {
 
     @BeforeClass
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","drivers/chromedriver1.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.nespresso.com/fr/fr");
